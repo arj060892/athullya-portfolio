@@ -1,0 +1,1354 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amal RJ | Ad Ops & Marketing Ops Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Amal Ragulan Jayasree — Ad Operations & Marketing Operations (GA4, GTM, HubSpot, reporting, campaign coordination)."
+    />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap + Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css"
+    />
+
+    <style>
+      :root {
+        --primary: #4f6cf0;
+        --primary-soft: rgba(79, 108, 240, 0.08);
+        --bg-body: #060816;
+        --bg-surface: #0b1020;
+        --bg-surface-soft: #11182a;
+        --border-subtle: rgba(255, 255, 255, 0.06);
+        --text-main: #f7f7ff;
+        --text-muted: #a0a4c0;
+        --accent: #ffb347;
+        --radius-lg: 18px;
+        --shadow-soft: 0 20px 45px rgba(0, 0, 0, 0.5);
+        --transition-fast: 0.25s ease;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      body {
+        font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, #20294c 0, #060816 40%),
+          radial-gradient(circle at bottom right, #151b36 0, #060816 50%);
+        color: var(--text-main);
+        overflow-x: hidden;
+      }
+
+      /* Floating background glow */
+      body::before,
+      body::after {
+        content: "";
+        position: fixed;
+        border-radius: 999px;
+        filter: blur(80px);
+        opacity: 0.45;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      body::before {
+        width: 260px;
+        height: 260px;
+        background: rgba(79, 108, 240, 0.4);
+        top: -60px;
+        left: -40px;
+      }
+
+      body::after {
+        width: 320px;
+        height: 320px;
+        background: rgba(255, 179, 71, 0.35);
+        bottom: -80px;
+        right: -20px;
+      }
+
+      /* Layout */
+      .sidebar-fixed {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 270px;
+        height: calc(100vh - 40px);
+        padding: 22px 20px;
+        border-radius: 22px;
+        background: radial-gradient(
+            circle at top left,
+            rgba(255, 255, 255, 0.08),
+            transparent 45%
+          ),
+          rgba(9, 10, 20, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow-soft);
+        overflow-y: auto;
+        z-index: 5;
+        transform-origin: left center;
+        animation: sidebar-in 0.7s ease-out;
+      }
+
+      @keyframes sidebar-in {
+        0% {
+          transform: translateX(-20px) scale(0.97);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0) scale(1);
+          opacity: 1;
+        }
+      }
+
+      .main-content {
+        margin-left: 310px;
+        padding: 32px 48px 40px;
+        min-height: 100vh;
+      }
+
+      @media (max-width: 992px) {
+        .sidebar-fixed {
+          position: static;
+          width: 100%;
+          height: auto;
+          margin: 16px auto 0;
+          max-width: 720px;
+        }
+        .main-content {
+          margin-left: 0;
+          padding: 24px 18px 32px;
+        }
+      }
+
+      /* Sidebar content */
+      .avatar-wrapper {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto 18px;
+        padding: 3px;
+        background: conic-gradient(
+          from 220deg,
+          #ffb347,
+          #ff6f91,
+          #4f6cf0,
+          #20e3b2,
+          #ffb347
+        );
+        /* animation: avatar-glow 8s linear infinite; */
+      }
+
+      @keyframes avatar-glow {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .avatar-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        overflow: hidden;
+        background: #050816;
+      }
+
+      .avatar-inner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .avatar-inner:hover img {
+        transform: scale(1.05);
+      }
+
+      .sidebar-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      .sidebar-role {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 0.76rem;
+        color: var(--text-main);
+        background: radial-gradient(circle at top left, #2f3560, #14182e);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .pill i {
+        font-size: 0.9rem;
+        color: var(--accent);
+      }
+
+      .sidebar-divider {
+        margin: 15px 0 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .sidebar-contact p {
+        margin-bottom: 6px;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .sidebar-contact i {
+        color: var(--primary);
+      }
+
+      .sidebar-contact a {
+        color: var(--text-main);
+        text-decoration: none;
+      }
+
+      .sidebar-contact a:hover {
+        color: var(--accent);
+      }
+
+      .social-row {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .social-link {
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        transition: var(--transition-fast);
+      }
+
+      .social-link:hover {
+        transform: translateY(-2px);
+        color: var(--accent);
+        border-color: rgba(255, 179, 71, 0.6);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+      }
+
+      .btn-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        width: 100%;
+        font-size: 0.85rem;
+        border-radius: 999px;
+        padding: 8px 14px;
+        border: none;
+        background: linear-gradient(135deg, var(--primary), #7f63ff);
+        color: #fff;
+        font-weight: 500;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+        transition: var(--transition-fast);
+      }
+
+      .btn-cta:hover {
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+        color: #fff;
+      }
+
+      /* Sections */
+      .section-wrapper {
+        margin-bottom: 32px;
+        border-radius: var(--radius-lg);
+        background: radial-gradient(circle at top left, #202744, #0b1020);
+        border: 1px solid var(--border-subtle);
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+        padding: 22px 20px 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .section-wrapper::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at top right,
+          rgba(255, 255, 255, 0.08),
+          transparent 55%
+        );
+        opacity: 0.3;
+        pointer-events: none;
+      }
+
+      .section-inner {
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-title {
+        font-weight: 600;
+        font-size: 1.05rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #fefefe;
+        margin-bottom: 10px;
+      }
+
+      .section-icon-wrap {
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at top, #ffb347, #ff6f91);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+      }
+
+      .section-title i {
+        font-size: 1.1rem;
+        color: #050816;
+      }
+
+      .section-subtitle {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+      }
+
+      /* Skills */
+      .skills-group-label {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 6px;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .badge-skill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(79, 108, 240, 0.15);
+        color: #e3e6ff;
+        border-radius: 999px;
+        padding: 6px 10px;
+        margin: 3px;
+        font-size: 0.78rem;
+        font-weight: 500;
+        border: 1px solid rgba(79, 108, 240, 0.35);
+        box-shadow: 0 0 0 rgba(79, 108, 240, 0);
+        transition: var(--transition-fast);
+      }
+
+      .badge-skill::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 999px;
+        background: var(--accent);
+      }
+
+      .badge-skill:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 9px 20px rgba(0, 0, 0, 0.45);
+        border-color: rgba(255, 179, 71, 0.65);
+      }
+
+      /* Work samples */
+      .nav-pills {
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 999px;
+        padding: 4px;
+        display: inline-flex;
+        gap: 4px;
+      }
+
+      .nav-pills .nav-link {
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        border: none;
+        background: transparent;
+        transition: var(--transition-fast);
+      }
+
+      .nav-pills .nav-link.active {
+        background: linear-gradient(135deg, var(--primary), #7f63ff);
+        color: #fff;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+      }
+
+      .nav-pills .nav-link:not(.active):hover {
+        background: rgba(255, 255, 255, 0.04);
+        color: #fff;
+      }
+
+      .swiper {
+        padding: 18px 4px 10px;
+      }
+
+      .swiper-slide {
+        background: rgba(10, 12, 26, 0.95);
+        border-radius: 16px;
+        padding: 14px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+        transition: var(--transition-fast);
+        transform-origin: center;
+      }
+      .swiper-slide {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+
+      .swiper-slide:hover {
+        transform: translateY(-4px) scale(1.01);
+        border-color: rgba(255, 179, 71, 0.75);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: var(--accent) !important;
+      }
+
+      .work-thumb {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #111830;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        cursor: pointer;
+      }
+
+      .work-meta {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 12px 12px 10px;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.82),
+          rgba(0, 0, 0, 0.05)
+        );
+        pointer-events: none;
+      }
+
+      .work-title {
+        font-size: 0.86rem;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.2;
+      }
+
+      .work-subtitle {
+        margin-top: 4px;
+        font-size: 0.74rem;
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      .work-tags {
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .work-tag {
+        font-size: 0.68rem;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .pdf-embed {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        pointer-events: none;
+        background: #111830;
+      }
+
+      .pdf-fallback {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        text-align: center;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.75);
+        background: #111830;
+      }
+
+      #photo-gallery .photo-thumb {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: #050816;
+        cursor: pointer;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+        transition: var(--transition-fast);
+      }
+
+      #photo-gallery .photo-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.35s ease;
+      }
+
+      #photo-gallery .photo-thumb:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255, 179, 71, 0.7);
+      }
+
+      #photo-gallery .photo-thumb:hover img {
+        transform: scale(1.05);
+      }
+
+      #photo-gallery .photo-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: flex-end;
+        padding: 10px;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.05)
+        );
+        opacity: 0;
+        transition: opacity 0.35s ease;
+        font-size: 0.75rem;
+        color: #fff;
+      }
+
+      #photo-gallery .photo-thumb:hover .photo-overlay {
+        opacity: 1;
+      }
+
+      /* Resume */
+      .resume-frame {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: #050816;
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+      }
+
+      iframe {
+        border: none;
+      }
+
+      /* Contact button */
+      .btn-contact {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 999px;
+        font-size: 0.84rem;
+        padding: 8px 16px;
+        background: transparent;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        transition: var(--transition-fast);
+      }
+
+      .btn-contact i {
+        color: var(--accent);
+      }
+
+      .btn-contact:hover {
+        background: linear-gradient(135deg, var(--primary), #7f63ff);
+        border-color: transparent;
+        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.65);
+      }
+
+      /* Work items (if used inside slides) */
+      .work-item {
+        border-radius: 14px;
+        padding: 12px 14px;
+        background: rgba(11, 16, 32, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition: var(--transition-fast);
+      }
+
+      .work-item:hover {
+        border-color: rgba(255, 179, 71, 0.7);
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.8);
+      }
+
+      /* Reveal on scroll */
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .reveal-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Scrollbar tweaks for sidebar */
+      .sidebar-fixed::-webkit-scrollbar {
+        width: 6px;
+      }
+      .sidebar-fixed::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .sidebar-fixed::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+      }
+
+      /* Timeline Layout */
+      .timeline {
+        position: relative;
+        margin-left: 12px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(var(--primary), #7f63ff);
+        border-radius: 4px;
+        opacity: 0.6;
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 32px;
+      }
+
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-marker {
+        position: absolute;
+        top: 4px;
+        left: -6px;
+        width: 14px;
+        height: 14px;
+        background: var(--accent);
+        border-radius: 50%;
+        border: 2px solid #11182a;
+        box-shadow: 0 0 0 4px rgba(255, 179, 71, 0.25);
+      }
+
+      /* Certificate Badges */
+      .cert-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        margin: 4px;
+        background: rgba(79, 108, 240, 0.15);
+        border: 1px solid rgba(79, 108, 240, 0.35);
+        border-radius: 999px;
+        font-size: 0.78rem;
+        color: #e3e6ff;
+        font-weight: 500;
+        transition: 0.25s ease;
+      }
+
+      .cert-badge i {
+        color: var(--accent);
+      }
+
+      .cert-badge:hover {
+        transform: translateY(-2px);
+        border-color: rgba(255, 179, 71, 0.6);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+      }
+      /* Improve readability for timeline text */
+      .section-wrapper p,
+      .section-wrapper ul li,
+      .timeline-item p,
+      .timeline-item ul li {
+        color: #d8dcf0 !important; /* soft but readable light grey */
+      }
+
+      .timeline-item h6 {
+        color: #ffffff !important;
+      }
+
+      .section-subtitle {
+        color: #c2c6d8 !important;
+      }
+
+      #photo-gallery {
+        column-count: 3;
+        column-gap: 16px;
+      }
+
+      #photo-gallery img {
+        width: 100%;
+        margin-bottom: 16px;
+        border-radius: 12px;
+        display: inline-block;
+        break-inside: avoid;
+        cursor: pointer;
+      }
+      @media (max-width: 768px) {
+        #photo-gallery {
+          column-count: 2;
+        }
+      }
+      @media (max-width: 480px) {
+        #photo-gallery {
+          column-count: 1;
+        }
+      }
+      @keyframes igGradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar-fixed">
+      <div class="text-center">
+        <!-- Avatar -->
+        <div class="avatar-wrapper mb-2">
+          <div class="avatar-inner">
+            <img src="assets/images/profile.jpg?v=20260317" alt="Profile of Amal" />
+          </div>
+        </div>
+
+        <!-- Name -->
+        <h4 class="sidebar-name mb-1">Amal Ragulan Jayasree</h4>
+        <p class="sidebar-role mb-3">Ad Operations & Marketing Operations</p>
+
+        <!-- Pills -->
+        <div class="d-flex flex-column align-items-center gap-2 mb-3">
+          <span class="pill">
+            <i class="bi bi-geo-alt-fill"></i
+            ><span>Auckland, NZ</span>
+          </span>
+          <span class="pill">
+            <i class="bi bi-briefcase-fill"></i
+            ><span>Open to Ad Ops/MarOps</span>
+          </span>
+          <span class="pill">
+            <i class="bi bi-passport-fill"></i
+            ><span>Work visa until Sep 2027</span>
+          </span>
+        </div>
+
+        <hr class="sidebar-divider" />
+
+        <!-- Contact Details -->
+        <div class="sidebar-contact text-start small">
+          <p>
+            <i class="bi bi-envelope-fill me-2"></i>
+            <a href="mailto:amalrj56@gmail.com">amalrj56@gmail.com</a>
+          </p>
+          <p>
+            <i class="bi bi-telephone-fill me-2"></i>
+            <span>+64 27 256 9190</span>
+          </p>
+        </div>
+
+        <!-- Social Icons (final & clean) -->
+        <div class="social-row justify-content-center mt-3">
+          <a
+            href="https://www.linkedin.com/in/amalrj/"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/amaaalrj/"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="mailto:amalrj56@gmail.com" class="social-link">
+            <i class="bi bi-envelope"></i>
+          </a>
+        </div>
+
+        <!-- Download Resume -->
+        <button
+          class="btn-cta btn-sm mt-3"
+          onclick="window.open('assets/pdfs/Amal_RJ_AdOps_MarOps_CV.pdf?v=20260317', '_blank')"
+        >
+          <i class="bi bi-file-earmark-arrow-down"></i>
+          <span>Download CV</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <main class="main-content">
+      <!-- ABOUT -->
+      <section class="section-wrapper reveal">
+        <div class="section-inner">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <div>
+              <div class="section-title">
+                <div class="section-icon-wrap">
+                  <i class="bi bi-person-lines-fill"></i>
+                </div>
+                <span>About</span>
+              </div>
+              <p class="section-subtitle">
+                A quick snapshot of what I do and the impact I create.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-text">
+            <p>
+              With over <strong>4 years of experience</strong> across digital
+              marketing, <strong>Ad Operations</strong>, and
+              <strong>Marketing Operations</strong>, I help teams run campaigns
+              smoothly, track them accurately, and turn results into clear next
+              steps.
+            </p>
+
+            <p>
+              My work includes campaign setup support (email, social, and
+              display), creative spec checks, segmentation and database hygiene,
+              and performance reporting using <strong>GA4</strong>,
+              <strong>Google Tag Manager (GTM)</strong>, <strong>HubSpot</strong>,
+              and <strong>Excel / Looker Studio</strong>.
+            </p>
+
+            <p class="mb-0">
+              I'm detail-oriented and process-driven, comfortable partnering
+              with sales and marketing to troubleshoot tracking, spot trends and
+              anomalies, and improve acquisition, engagement, and conversion
+              outcomes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section-wrapper reveal">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="section-icon-wrap">
+              <i class="bi bi-lightning-fill"></i>
+            </div>
+            <span>Skills</span>
+          </div>
+          <p class="section-subtitle">
+            Tools and workflows I use to keep campaigns organised, tracked, and report-ready.
+          </p>
+
+          <div class="mb-3">
+            <div class="skills-group-label">Campaign Operations &amp; Ad Support</div>
+            <div>
+              <span class="badge-skill">Campaign setup &amp; coordination</span>
+              <span class="badge-skill">Ad trafficking fundamentals</span>
+              <span class="badge-skill">Creative spec checks</span>
+              <span class="badge-skill">Google Ads (Search/Display)</span>
+              <span class="badge-skill">Programmatic concepts (DSP/SSP)</span>
+              <span class="badge-skill">Optimisation support</span>
+              <span class="badge-skill">Pacing &amp; frequency basics</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="skills-group-label">CRM &amp; Marketing Automation</div>
+            <div>
+              <span class="badge-skill">HubSpot CRM</span>
+              <span class="badge-skill">Segmentation</span>
+              <span class="badge-skill">Workflows &amp; automation</span>
+              <span class="badge-skill">Lifecycle email campaigns</span>
+              <span class="badge-skill">List management</span>
+              <span class="badge-skill">Database hygiene</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="skills-group-label">Analytics &amp; Reporting</div>
+            <div>
+              <span class="badge-skill">GA4</span>
+              <span class="badge-skill">Google Tag Manager (GTM)</span>
+              <span class="badge-skill">Looker Studio</span>
+              <span class="badge-skill">Post-campaign analysis</span>
+              <span class="badge-skill">Excel (Pivot tables)</span>
+              <span class="badge-skill">CTR/CVR calculations</span>
+              <span class="badge-skill">Data cleaning</span>
+              <span class="badge-skill">Trend &amp; anomaly spotting</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK SAMPLES -->
+      <section class="section-wrapper reveal">
+        <div class="section-inner">
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3"
+          >
+            <div>
+              <div class="section-title">
+                <div class="section-icon-wrap">
+                  <i class="bi bi-grid-fill"></i>
+                </div>
+                <span>Work Samples</span>
+              </div>
+              <p class="section-subtitle mb-0">
+                Dashboards, creatives, and selected work samples. Swipe or click
+                through each tab.
+              </p>
+            </div>
+
+            <!-- Tabs -->
+            <ul class="nav nav-pills" id="workTabs" role="tablist">
+              <li class="nav-item">
+                <button
+                  class="nav-link active"
+                  data-bs-target="#dashboards-pane"
+                  data-bs-toggle="tab"
+                  type="button"
+                >
+                  Dashboards
+                </button>
+              </li>
+              <li class="nav-item">
+                <button
+                  class="nav-link"
+                  data-bs-target="#images-pane"
+                  data-bs-toggle="tab"
+                  type="button"
+                >
+                  Images
+                </button>
+              </li>
+              <li class="nav-item">
+                <button
+                  class="nav-link"
+                  data-bs-target="#videos-pane"
+                  data-bs-toggle="tab"
+                  type="button"
+                >
+                  Videos
+                </button>
+              </li>
+              <li class="nav-item">
+                <button
+                  class="nav-link"
+                  data-bs-target="#pdfs-pane"
+                  data-bs-toggle="tab"
+                  type="button"
+                >
+                  Posters / Flyers
+                </button>
+              </li>
+              <li class="nav-item">
+                <button
+                  class="nav-link"
+                  data-bs-target="#photo-pane"
+                  data-bs-toggle="tab"
+                  type="button"
+                >
+                  Photography
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-content">
+            <!-- Dashboards -->
+            <div class="tab-pane fade show active" id="dashboards-pane">
+              <div class="swiper" id="dashboards-swiper">
+                <div
+                  class="swiper-wrapper"
+                  id="dashboards-swiper-wrapper"
+                ></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>
+
+            <!-- Images -->
+            <div class="tab-pane fade" id="images-pane">
+              <div class="swiper" id="images-swiper">
+                <div class="swiper-wrapper" id="images-swiper-wrapper"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>
+
+            <!-- Videos -->
+            <div class="tab-pane fade" id="videos-pane">
+              <div class="swiper" id="videos-swiper">
+                <div class="swiper-wrapper" id="videos-swiper-wrapper"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>
+
+            <!-- PDFs -->
+            <div class="tab-pane fade" id="pdfs-pane">
+              <div class="swiper" id="pdfs-swiper">
+                <div class="swiper-wrapper" id="pdfs-swiper-wrapper"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>
+
+            <!-- Photography -->
+            <div class="tab-pane fade" id="photo-pane">
+              <div id="photo-gallery" class="row g-3">
+                <!-- content-loader.js should populate this -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESUME PREVIEW -->
+      <!-- <section class="section-wrapper reveal">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="section-icon-wrap">
+              <i class="bi bi-file-earmark-text"></i>
+            </div>
+            <span>Resume</span>
+          </div>
+          <p class="section-subtitle">
+            Quick preview. For the full version, use the download button on the
+            left.
+          </p>
+
+          <div class="resume-frame">
+            <div class="ratio ratio-4x3">
+              <iframe src="assets/pdfs/Amal_CV.pdf"></iframe>
+            </div>
+          </div>
+        </div>
+      </section> -->
+      <!-- WORK EXPERIENCE -->
+      <section class="section-wrapper reveal">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="section-icon-wrap">
+              <i class="bi bi-clock-history"></i>
+            </div>
+            <span>Work Experience</span>
+          </div>
+
+          <div class="timeline">
+            <!-- TIMELINE ITEM: Chroniclers -->
+            <div class="timeline-item">
+              <span class="timeline-marker"></span>
+              <h6 class="fw-semibold text-white mb-1">
+                Digital Marketing & Content Specialist — Chroniclers
+              </h6>
+              <p class="section-subtitle mb-2">
+                Jul 2023 – Sep 2025 · Auckland, New Zealand
+              </p>
+              <ul class="text-muted small">
+                <li>
+                  Coordinated social-first campaigns for events, increasing
+                  sign-ups by 30%.
+                </li>
+                <li>
+                  Planned, filmed, and edited content for social channels,
+                  boosting engagement by 35%.
+                </li>
+                <li>
+                  Managed CRM segmentation, list hygiene, and automated email
+                  flows (HubSpot / Mailchimp).
+                </li>
+                <li>
+                  Produced performance reporting using GA4 and Looker Studio;
+                  partnered with sales on lead-gen tracking.
+                </li>
+              </ul>
+            </div>
+
+            <!-- TIMELINE ITEM: Mangere -->
+            <div class="timeline-item">
+              <span class="timeline-marker"></span>
+              <h6 class="fw-semibold text-white mb-1">
+                Digital Marketing Specialist (Voluntary) — Māngere Budgeting
+                Service Trust
+              </h6>
+              <p class="section-subtitle mb-2">
+                2025 – Present · Auckland, New Zealand
+              </p>
+              <ul class="text-muted small">
+                <li>
+                  Created digital campaigns to increase community awareness and
+                  support donation activity.
+                </li>
+                <li>
+                  Designed visuals and content calendars for social platforms.
+                </li>
+                <li>
+                  Supported SEO improvements on WordPress / Squarespace to
+                  improve discoverability.
+                </li>
+                <li>
+                  Increased volunteer sign-ups through targeted content and
+                  community engagement.
+                </li>
+              </ul>
+            </div>
+
+            <!-- TIMELINE ITEM: Ray White -->
+            <div class="timeline-item">
+              <span class="timeline-marker"></span>
+              <h6 class="fw-semibold text-white mb-1">
+                Marketing Intern — Ray White Takanini & Karaka
+              </h6>
+              <p class="section-subtitle mb-2">
+                Sep 2025 – Oct 2025 · Auckland, New Zealand
+              </p>
+              <ul class="text-muted small">
+                <li>
+                  Designed creatives, brochures, and brand-aligned marketing
+                  materials.
+                </li>
+                <li>Supported SEO optimisation for property listings.</li>
+                <li>
+                  Scheduled posts and tracked engagement analytics.
+                </li>
+                <li>
+                  Supported agents with campaign coordination and brand
+                  consistency.
+                </li>
+              </ul>
+            </div>
+
+            <!-- TIMELINE ITEM: Gasoline Alley -->
+            <div class="timeline-item">
+              <span class="timeline-marker"></span>
+              <h6 class="fw-semibold text-white mb-1">
+                Customer Service & Sales Assistant — Gasoline Alley Services
+              </h6>
+              <p class="section-subtitle mb-2">
+                Jul 2023 – Sep 2025 · Auckland, New Zealand
+              </p>
+              <ul class="text-muted small">
+                <li>Handled 150–200 daily transactions with high accuracy.</li>
+                <li>Maintained >98% inventory accuracy across 200+ SKUs.</li>
+                <li>Increased upsells by 12% via personalised suggestions.</li>
+                <li>
+                  Installed promotional displays & tracked campaign engagement.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrapper reveal">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="section-icon-wrap">
+              <i class="bi bi-mortarboard"></i>
+            </div>
+            <span>Education</span>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="timeline-marker"></span>
+              <h6 class="fw-semibold text-white mb-1">
+                Master of Applied Business — Digital Marketing
+              </h6>
+              <p class="section-subtitle mb-2">
+                Unitec Institute of Technology · 2023–2024 · Auckland
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <span class="timeline-marker"></span>
+              <h6 class="fw-semibold text-white mb-1">
+                Bachelor of Science — Animation
+              </h6>
+              <p class="section-subtitle mb-0">
+                Fergusson College · 2017–2020 · Pune, India
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrapper reveal">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="section-icon-wrap">
+              <i class="bi bi-award"></i>
+            </div>
+            <span>Certifications</span>
+          </div>
+
+          <div class="mb-0">
+            <span class="cert-badge"
+              ><i class="bi bi-patch-check"></i>Google Analytics 4 (GA4)</span
+            >
+            <span class="cert-badge"
+              ><i class="bi bi-patch-check"></i>Google Ads Certification</span
+            >
+            <span class="cert-badge"
+              ><i class="bi bi-patch-check"></i>HubSpot Inbound Marketing</span
+            >
+            <span class="cert-badge"
+              ><i class="bi bi-patch-check"></i>Complete Digital Marketing Guide
+              – Udemy</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section-wrapper reveal">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="section-icon-wrap">
+              <i class="bi bi-send-fill"></i>
+            </div>
+            <span>Contact</span>
+          </div>
+          <p class="section-subtitle">
+            If this looks aligned with what you’re hiring for, I’d love to chat.
+          </p>
+          <p>
+            I’m available for Ad Operations, Marketing Operations, and
+            performance reporting roles. If you’d like to discuss a role, see
+            more work, or walk through a dashboard or campaign workflow, just
+            drop me a line.
+          </p>
+          <button
+            class="btn-contact"
+            onclick="window.location.href='mailto:amalrj56@gmail.com'"
+          >
+            <i class="bi bi-envelope"></i>
+            <span>Email Amal</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    </script>
+    <script>
+      window.__SITE_VERSION__ = "20260317";
+    </script>
+    <script src="data/content-inline.js?v=20260317"></script>
+    <script src="js/content-loader.js?v=20260317"></script>
+
+    <script>
+      // Simple reveal-on-scroll
+      const revealEls = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("reveal-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      revealEls.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
+
+
+
