@@ -31,6 +31,7 @@ jobs:
             --exclude ".git" \
             --exclude ".github" \
             --exclude "node_modules" \
+            --exclude "dist" \
             ./ dist/
 
       - name: Upload Pages artifact
@@ -48,4 +49,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
