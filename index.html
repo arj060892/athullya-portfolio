@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Amal RJ | Ad Ops & Marketing Ops Portfolio</title>
+    <title>Athullya Bhuvanendran | Data Engineer Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of Amal Ragulan Jayasree — Ad Operations & Marketing Operations (GA4, GTM, HubSpot, reporting, campaign coordination)."
+      content="Portfolio of Athullya Bhuvanendran — Data Engineer / Analytics Engineer (Azure, Python, ETL/ELT, Power BI)."
     />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
@@ -29,14 +29,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery-bundle.min.css"
-    />
+    <!-- No additional plugins needed -->
 
     <style>
       :root {
@@ -412,188 +405,37 @@
         border-color: rgba(255, 179, 71, 0.65);
       }
 
-      /* Work samples */
-      .nav-pills {
-        background: rgba(255, 255, 255, 0.02);
-        border-radius: 999px;
-        padding: 4px;
-        display: inline-flex;
-        gap: 4px;
+      /* Accordions (case studies) */
+      .accordion {
+        --bs-accordion-bg: transparent;
+        --bs-accordion-border-color: rgba(255, 255, 255, 0.08);
+        --bs-accordion-btn-focus-box-shadow: none;
+        --bs-accordion-active-bg: rgba(79, 108, 240, 0.1);
+        --bs-accordion-active-color: #fff;
       }
 
-      .nav-pills .nav-link {
-        border-radius: 999px;
-        padding: 6px 14px;
-        font-size: 0.78rem;
-        color: var(--text-muted);
-        border: none;
-        background: transparent;
-        transition: var(--transition-fast);
-      }
-
-      .nav-pills .nav-link.active {
-        background: linear-gradient(135deg, var(--primary), #7f63ff);
-        color: #fff;
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
-      }
-
-      .nav-pills .nav-link:not(.active):hover {
-        background: rgba(255, 255, 255, 0.04);
-        color: #fff;
-      }
-
-      .swiper {
-        padding: 18px 4px 10px;
-      }
-
-      .swiper-slide {
-        background: rgba(10, 12, 26, 0.95);
+      .accordion-item {
+        background: rgba(10, 12, 26, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 16px;
-        padding: 14px 16px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
-        transition: var(--transition-fast);
-        transform-origin: center;
-      }
-      .swiper-slide {
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-      }
-
-      .swiper-slide:hover {
-        transform: translateY(-4px) scale(1.01);
-        border-color: rgba(255, 179, 71, 0.75);
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
-      }
-
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: var(--accent) !important;
-      }
-
-      .work-thumb {
-        position: relative;
-        border-radius: 14px;
         overflow: hidden;
-        background: #111830;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        cursor: pointer;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+        margin-bottom: 12px;
       }
 
-      .work-meta {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 12px 12px 10px;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.82),
-          rgba(0, 0, 0, 0.05)
-        );
-        pointer-events: none;
-      }
-
-      .work-title {
-        font-size: 0.86rem;
+      .accordion-button {
+        color: #fff;
         font-weight: 600;
-        color: #fff;
-        line-height: 1.2;
+        background: transparent;
       }
 
-      .work-subtitle {
-        margin-top: 4px;
-        font-size: 0.74rem;
-        color: rgba(255, 255, 255, 0.75);
+      .accordion-button::after {
+        filter: invert(1) brightness(1.2);
+        opacity: 0.9;
       }
 
-      .work-tags {
-        margin-top: 8px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-
-      .work-tag {
-        font-size: 0.68rem;
-        padding: 3px 8px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      .pdf-embed {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-        pointer-events: none;
-        background: #111830;
-      }
-
-      .pdf-fallback {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px;
-        text-align: center;
-        font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.75);
-        background: #111830;
-      }
-
-      #photo-gallery .photo-thumb {
-        position: relative;
-        border-radius: 14px;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: #050816;
-        cursor: pointer;
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
-        transition: var(--transition-fast);
-      }
-
-      #photo-gallery .photo-thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.35s ease;
-      }
-
-      #photo-gallery .photo-thumb:hover {
-        transform: translateY(-4px);
-        border-color: rgba(255, 179, 71, 0.7);
-      }
-
-      #photo-gallery .photo-thumb:hover img {
-        transform: scale(1.05);
-      }
-
-      #photo-gallery .photo-overlay {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: flex-end;
-        padding: 10px;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.7),
-          rgba(0, 0, 0, 0.05)
-        );
-        opacity: 0;
-        transition: opacity 0.35s ease;
-        font-size: 0.75rem;
-        color: #fff;
-      }
-
-      #photo-gallery .photo-thumb:hover .photo-overlay {
-        opacity: 1;
+      .accordion-body {
+        color: var(--text-muted);
       }
 
       /* Resume */
@@ -752,40 +594,6 @@
         color: #c2c6d8 !important;
       }
 
-      #photo-gallery {
-        column-count: 3;
-        column-gap: 16px;
-      }
-
-      #photo-gallery img {
-        width: 100%;
-        margin-bottom: 16px;
-        border-radius: 12px;
-        display: inline-block;
-        break-inside: avoid;
-        cursor: pointer;
-      }
-      @media (max-width: 768px) {
-        #photo-gallery {
-          column-count: 2;
-        }
-      }
-      @media (max-width: 480px) {
-        #photo-gallery {
-          column-count: 1;
-        }
-      }
-      @keyframes igGradient {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
     </style>
   </head>
 
@@ -796,27 +604,31 @@
         <!-- Avatar -->
         <div class="avatar-wrapper mb-2">
           <div class="avatar-inner">
-            <img src="assets/images/profile.jpg?v=20260317" alt="Profile of Amal" />
+            <img
+              src="assets/images/athullya.jpg?v=20260317"
+              alt="Photo of Athullya"
+              onerror="this.onerror=null;this.src='assets/images/profile.svg?v=20260317';"
+            />
           </div>
         </div>
 
         <!-- Name -->
-        <h4 class="sidebar-name mb-1">Amal Ragulan Jayasree</h4>
-        <p class="sidebar-role mb-3">Ad Operations & Marketing Operations</p>
+        <h4 class="sidebar-name mb-1">Athullya Bhuvanendran</h4>
+        <p class="sidebar-role mb-3">Data Engineer / Analytics Engineer</p>
 
         <!-- Pills -->
         <div class="d-flex flex-column align-items-center gap-2 mb-3">
           <span class="pill">
             <i class="bi bi-geo-alt-fill"></i
-            ><span>Auckland, NZ</span>
+            ><span>Midlands, UK</span>
           </span>
           <span class="pill">
             <i class="bi bi-briefcase-fill"></i
-            ><span>Open to Ad Ops/MarOps</span>
+            ><span>Open to Data roles</span>
           </span>
           <span class="pill">
-            <i class="bi bi-passport-fill"></i
-            ><span>Work visa until Sep 2027</span>
+            <i class="bi bi-cloud-fill"></i
+            ><span>Azure • Python • SQL</span>
           </span>
         </div>
 
@@ -826,31 +638,24 @@
         <div class="sidebar-contact text-start small">
           <p>
             <i class="bi bi-envelope-fill me-2"></i>
-            <a href="mailto:amalrj56@gmail.com">amalrj56@gmail.com</a>
+            <a href="mailto:arjathullya@gmail.com">arjathullya@gmail.com</a>
           </p>
           <p>
             <i class="bi bi-telephone-fill me-2"></i>
-            <span>+64 27 256 9190</span>
+            <span>+44 7500 633286</span>
           </p>
         </div>
 
         <!-- Social Icons (final & clean) -->
         <div class="social-row justify-content-center mt-3">
           <a
-            href="https://www.linkedin.com/in/amalrj/"
+            href="https://www.linkedin.com/in/athullyabhuvanendran/"
             target="_blank"
             class="social-link"
           >
             <i class="bi bi-linkedin"></i>
           </a>
-          <a
-            href="https://www.instagram.com/amaaalrj/"
-            target="_blank"
-            class="social-link"
-          >
-            <i class="bi bi-instagram"></i>
-          </a>
-          <a href="mailto:amalrj56@gmail.com" class="social-link">
+          <a href="mailto:arjathullya@gmail.com" class="social-link">
             <i class="bi bi-envelope"></i>
           </a>
         </div>
@@ -858,7 +663,7 @@
         <!-- Download Resume -->
         <button
           class="btn-cta btn-sm mt-3"
-          onclick="window.open('assets/pdfs/Amal_RJ_AdOps_MarOps_CV.pdf?v=20260317', '_blank')"
+          onclick="window.open('assets/pdfs/Athullya_Bhuvanendran_CV.pdf?v=20260317', '_blank')"
         >
           <i class="bi bi-file-earmark-arrow-down"></i>
           <span>Download CV</span>
@@ -871,43 +676,294 @@
       <!-- ABOUT -->
       <section class="section-wrapper reveal">
         <div class="section-inner">
-          <div class="d-flex align-items-center justify-content-between mb-2">
-            <div>
-              <div class="section-title">
-                <div class="section-icon-wrap">
-                  <i class="bi bi-person-lines-fill"></i>
-                </div>
-                <span>About</span>
-              </div>
-              <p class="section-subtitle">
-                A quick snapshot of what I do and the impact I create.
-              </p>
+          <div class="section-title">
+            <div class="section-icon-wrap">
+              <i class="bi bi-person-lines-fill"></i>
             </div>
+            <span>About</span>
           </div>
+          <p class="section-subtitle">
+            Building secure, scalable data platforms and analytics for real-world
+            services.
+          </p>
 
           <div class="about-text">
             <p>
-              With over <strong>4 years of experience</strong> across digital
-              marketing, <strong>Ad Operations</strong>, and
-              <strong>Marketing Operations</strong>, I help teams run campaigns
-              smoothly, track them accurately, and turn results into clear next
-              steps.
+              I’m a <strong>data expert with 7+ years of experience</strong>,
+              moving from software development and data analysis into a
+              specialised analytics-focused role at the
+              <strong>London Borough of Barnet</strong>.
             </p>
 
             <p>
-              My work includes campaign setup support (email, social, and
-              display), creative spec checks, segmentation and database hygiene,
-              and performance reporting using <strong>GA4</strong>,
-              <strong>Google Tag Manager (GTM)</strong>, <strong>HubSpot</strong>,
-              and <strong>Excel / Looker Studio</strong>.
+              I design and support secure Azure architectures (ADLS Gen2,
+              Synapse, Data Factory, Spark, Azure AI Foundry) and build
+              production-grade pipelines that connect complex back-office and
+              operational systems—so teams can trust the data they use for
+              reporting, AI, and service improvement.
             </p>
 
             <p class="mb-0">
-              I'm detail-oriented and process-driven, comfortable partnering
-              with sales and marketing to troubleshoot tracking, spot trends and
-              anomalies, and improve acquisition, engagement, and conversion
-              outcomes.
+              I’m comfortable working with sensitive public sector data under
+              <strong>UK GDPR</strong> and governance standards, and I’m now
+              looking to strengthen enterprise data capability through scalable
+              engineering practices and strong data governance.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CASE STUDIES -->
+      <section class="section-wrapper reveal">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="section-icon-wrap">
+              <i class="bi bi-diagram-3-fill"></i>
+            </div>
+            <span>Case Studies</span>
+          </div>
+          <p class="section-subtitle">
+            A few end-to-end deliveries showing secure design, robust pipelines,
+            and outcomes that matter.
+          </p>
+
+          <div class="accordion" id="caseStudies">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="cs-ai">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#cs-ai-body"
+                >
+                  AI Hackathon — Document summary agent pipeline (48 hours)
+                </button>
+              </h2>
+              <div
+                id="cs-ai-body"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#caseStudies"
+              >
+                <div class="accordion-body">
+                  <p>
+                    Lead Developer in a collaboration with Telefónica, designing
+                    and delivering an end-to-end AI-driven document summary
+                    workflow with secure, transient processing.
+                  </p>
+                  <ul class="text-muted small mb-0">
+                    <li>
+                      Built a workflow using SharePoint, Power Apps, Power
+                      Automate, Azure Document Intelligence, and Azure AI Foundry
+                      (GPT-4).
+                    </li>
+                    <li>
+                      Engineered structured extraction, comparative scoring, and
+                      automated summary generation.
+                    </li>
+                    <li>
+                      Outcome: <strong>80% reduction</strong> in manual
+                      evaluation time while meeting governance requirements.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="cs-finance">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#cs-finance-body"
+                >
+                  Finance Treasury — Cash flow forecasting (governed Power BI)
+                </button>
+              </h2>
+              <div
+                id="cs-finance-body"
+                class="accordion-collapse collapse"
+                data-bs-parent="#caseStudies"
+              >
+                <div class="accordion-body">
+                  <p>
+                    Replaced manual PowerPoint reporting with a governed Power BI
+                    solution integrated with Power Apps, SharePoint, and Power
+                    Automate.
+                  </p>
+                  <ul class="text-muted small mb-0">
+                    <li>
+                      Built structured SharePoint ingestion and embedded
+                      standardised DAX measures.
+                    </li>
+                    <li>
+                      Implemented an in-report Power Apps form for controlled
+                      amendment requests.
+                    </li>
+                    <li>
+                      Added an approval workflow with audit traceability,
+                      scheduled refresh, and data integrity controls.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="cs-iot">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#cs-iot-body"
+                >
+                  LoRaWAN IoT — Near real-time telemetry analytics
+                </button>
+              </h2>
+              <div
+                id="cs-iot-body"
+                class="accordion-collapse collapse"
+                data-bs-parent="#caseStudies"
+              >
+                <div class="accordion-body">
+                  <p>
+                    Delivered an interactive dashboard for the Connected Places
+                    Team by building API-driven ingestion into Azure Data Lake
+                    and processing Avro/JSON telemetry in Synapse using PySpark.
+                  </p>
+                  <ul class="text-muted small mb-0">
+                    <li>
+                      Implemented incremental checkpoint logic and time-series
+                      aggregations (daily, 12hr, 6hr, 3hr).
+                    </li>
+                    <li>
+                      Added rule-based event detection (e.g., smart bin
+                      collection inference).
+                    </li>
+                    <li>
+                      Integrated Power Automate alerts and near-real-time
+                      dashboards to operationalise sensor intelligence.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="cs-vuln">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#cs-vuln-body"
+                >
+                  Financial Vulnerability — Single citizen view (Splink)
+                </button>
+              </h2>
+              <div
+                id="cs-vuln-body"
+                class="accordion-collapse collapse"
+                data-bs-parent="#caseStudies"
+              >
+                <div class="accordion-body">
+                  <p>
+                    Engineered a secure Azure lakehouse solution to extract and
+                    link data across Adult Social Care, Council Tax, Care
+                    Leavers, and Benefits systems.
+                  </p>
+                  <ul class="text-muted small mb-0">
+                    <li>
+                      Built a probabilistic record linkage pipeline in Python
+                      (Splink) to match records without consistent identifiers.
+                    </li>
+                    <li>
+                      Produced data quality outputs and engineered financial
+                      vulnerability scores.
+                    </li>
+                    <li>
+                      Delivered anonymised, ML-ready datasets with GDPR-compliant
+                      reporting views.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="cs-proc">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#cs-proc-body"
+                >
+                  Procurement data — Hybrid ingestion (API + SFTP)
+                </button>
+              </h2>
+              <div
+                id="cs-proc-body"
+                class="accordion-collapse collapse"
+                data-bs-parent="#caseStudies"
+              >
+                <div class="accordion-body">
+                  <p>
+                    Implemented multi-source ETL pipelines using ADF and Synapse
+                    to integrate commercial and procurement datasets from Delta
+                    (API-based) and Oracle (daily SFTP batch exports).
+                  </p>
+                  <ul class="text-muted small mb-0">
+                    <li>
+                      Implemented managed-identity secured SFTP access and
+                      automated ingestion into ADLS Gen2.
+                    </li>
+                    <li>
+                      Performed schema harmonisation and PySpark transformations
+                      to produce a standardised, analytics-ready dataset.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="cs-platform">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#cs-platform-body"
+                >
+                  Azure Data Platform — Lakehouse, RBAC/ACL, delivery governance
+                </button>
+              </h2>
+              <div
+                id="cs-platform-body"
+                class="accordion-collapse collapse"
+                data-bs-parent="#caseStudies"
+              >
+                <div class="accordion-body">
+                  <p>
+                    Designed and supported the council’s Azure Data Platform
+                    (ADLS Gen2, Synapse, Data Factory, Spark) with a governed
+                    lakehouse architecture and secure controls.
+                  </p>
+                  <ul class="text-muted small mb-0">
+                    <li>
+                      Implemented RBAC/ACL controls and supported cross-council
+                      integration of major back-office and customer systems.
+                    </li>
+                    <li>
+                      Led delivery from initiation to handover: PIDs, DPIAs, and
+                      technical standards (naming, segregation, metadata).
+                    </li>
+                    <li>
+                      Built and presented enterprise Power BI dashboards for
+                      leadership decision-making.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -922,196 +978,56 @@
             <span>Skills</span>
           </div>
           <p class="section-subtitle">
-            Tools and workflows I use to keep campaigns organised, tracked, and report-ready.
+            Platforms, languages, and tooling I use day-to-day.
           </p>
 
           <div class="mb-3">
-            <div class="skills-group-label">Campaign Operations &amp; Ad Support</div>
+            <div class="skills-group-label">Azure Data Platform</div>
             <div>
-              <span class="badge-skill">Campaign setup &amp; coordination</span>
-              <span class="badge-skill">Ad trafficking fundamentals</span>
-              <span class="badge-skill">Creative spec checks</span>
-              <span class="badge-skill">Google Ads (Search/Display)</span>
-              <span class="badge-skill">Programmatic concepts (DSP/SSP)</span>
-              <span class="badge-skill">Optimisation support</span>
-              <span class="badge-skill">Pacing &amp; frequency basics</span>
+              <span class="badge-skill">ADLS Gen2 (RBAC/ACL)</span>
+              <span class="badge-skill">Synapse (Pipelines/Notebooks)</span>
+              <span class="badge-skill">Azure Data Factory</span>
+              <span class="badge-skill">Apache Spark / PySpark</span>
+              <span class="badge-skill">Azure AI Foundry</span>
             </div>
           </div>
 
           <div class="mb-3">
-            <div class="skills-group-label">CRM &amp; Marketing Automation</div>
+            <div class="skills-group-label">Engineering</div>
             <div>
-              <span class="badge-skill">HubSpot CRM</span>
-              <span class="badge-skill">Segmentation</span>
-              <span class="badge-skill">Workflows &amp; automation</span>
-              <span class="badge-skill">Lifecycle email campaigns</span>
-              <span class="badge-skill">List management</span>
-              <span class="badge-skill">Database hygiene</span>
+              <span class="badge-skill">Python</span>
+              <span class="badge-skill">SQL Server</span>
+              <span class="badge-skill">ETL / ELT</span>
+              <span class="badge-skill">Incremental pipelines</span>
+              <span class="badge-skill">API + SFTP integration</span>
+              <span class="badge-skill">Git</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="skills-group-label">Analytics &amp; BI</div>
+            <div>
+              <span class="badge-skill">Power BI</span>
+              <span class="badge-skill">DAX</span>
+              <span class="badge-skill">Data modelling</span>
+              <span class="badge-skill">Governed reporting</span>
             </div>
           </div>
 
           <div>
-            <div class="skills-group-label">Analytics &amp; Reporting</div>
+            <div class="skills-group-label">Automation &amp; Governance</div>
             <div>
-              <span class="badge-skill">GA4</span>
-              <span class="badge-skill">Google Tag Manager (GTM)</span>
-              <span class="badge-skill">Looker Studio</span>
-              <span class="badge-skill">Post-campaign analysis</span>
-              <span class="badge-skill">Excel (Pivot tables)</span>
-              <span class="badge-skill">CTR/CVR calculations</span>
-              <span class="badge-skill">Data cleaning</span>
-              <span class="badge-skill">Trend &amp; anomaly spotting</span>
+              <span class="badge-skill">Power Automate</span>
+              <span class="badge-skill">Power Apps</span>
+              <span class="badge-skill">SharePoint</span>
+              <span class="badge-skill">UK GDPR</span>
+              <span class="badge-skill">DPIA / PID</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- WORK SAMPLES -->
-      <section class="section-wrapper reveal">
-        <div class="section-inner">
-          <div
-            class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3"
-          >
-            <div>
-              <div class="section-title">
-                <div class="section-icon-wrap">
-                  <i class="bi bi-grid-fill"></i>
-                </div>
-                <span>Work Samples</span>
-              </div>
-              <p class="section-subtitle mb-0">
-                Dashboards, creatives, and selected work samples. Swipe or click
-                through each tab.
-              </p>
-            </div>
-
-            <!-- Tabs -->
-            <ul class="nav nav-pills" id="workTabs" role="tablist">
-              <li class="nav-item">
-                <button
-                  class="nav-link active"
-                  data-bs-target="#dashboards-pane"
-                  data-bs-toggle="tab"
-                  type="button"
-                >
-                  Dashboards
-                </button>
-              </li>
-              <li class="nav-item">
-                <button
-                  class="nav-link"
-                  data-bs-target="#images-pane"
-                  data-bs-toggle="tab"
-                  type="button"
-                >
-                  Images
-                </button>
-              </li>
-              <li class="nav-item">
-                <button
-                  class="nav-link"
-                  data-bs-target="#videos-pane"
-                  data-bs-toggle="tab"
-                  type="button"
-                >
-                  Videos
-                </button>
-              </li>
-              <li class="nav-item">
-                <button
-                  class="nav-link"
-                  data-bs-target="#pdfs-pane"
-                  data-bs-toggle="tab"
-                  type="button"
-                >
-                  Posters / Flyers
-                </button>
-              </li>
-              <li class="nav-item">
-                <button
-                  class="nav-link"
-                  data-bs-target="#photo-pane"
-                  data-bs-toggle="tab"
-                  type="button"
-                >
-                  Photography
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div class="tab-content">
-            <!-- Dashboards -->
-            <div class="tab-pane fade show active" id="dashboards-pane">
-              <div class="swiper" id="dashboards-swiper">
-                <div
-                  class="swiper-wrapper"
-                  id="dashboards-swiper-wrapper"
-                ></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-              </div>
-            </div>
-
-            <!-- Images -->
-            <div class="tab-pane fade" id="images-pane">
-              <div class="swiper" id="images-swiper">
-                <div class="swiper-wrapper" id="images-swiper-wrapper"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-              </div>
-            </div>
-
-            <!-- Videos -->
-            <div class="tab-pane fade" id="videos-pane">
-              <div class="swiper" id="videos-swiper">
-                <div class="swiper-wrapper" id="videos-swiper-wrapper"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-              </div>
-            </div>
-
-            <!-- PDFs -->
-            <div class="tab-pane fade" id="pdfs-pane">
-              <div class="swiper" id="pdfs-swiper">
-                <div class="swiper-wrapper" id="pdfs-swiper-wrapper"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-              </div>
-            </div>
-
-            <!-- Photography -->
-            <div class="tab-pane fade" id="photo-pane">
-              <div id="photo-gallery" class="row g-3">
-                <!-- content-loader.js should populate this -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- RESUME PREVIEW -->
-      <!-- <section class="section-wrapper reveal">
-        <div class="section-inner">
-          <div class="section-title">
-            <div class="section-icon-wrap">
-              <i class="bi bi-file-earmark-text"></i>
-            </div>
-            <span>Resume</span>
-          </div>
-          <p class="section-subtitle">
-            Quick preview. For the full version, use the download button on the
-            left.
-          </p>
-
-          <div class="resume-frame">
-            <div class="ratio ratio-4x3">
-              <iframe src="assets/pdfs/Amal_CV.pdf"></iframe>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- WORK EXPERIENCE -->
+      <!-- EXPERIENCE -->
       <section class="section-wrapper reveal">
         <div class="section-inner">
           <div class="section-title">
@@ -1122,111 +1038,82 @@
           </div>
 
           <div class="timeline">
-            <!-- TIMELINE ITEM: Chroniclers -->
             <div class="timeline-item">
               <span class="timeline-marker"></span>
               <h6 class="fw-semibold text-white mb-1">
-                Digital Marketing & Content Specialist — Chroniclers
+                Insight &amp; Intelligence Analyst — London Borough of Barnet
               </h6>
-              <p class="section-subtitle mb-2">
-                Jul 2023 – Sep 2025 · Auckland, New Zealand
-              </p>
+              <p class="section-subtitle mb-2">Jan 2024 – Present · London, UK</p>
               <ul class="text-muted small">
                 <li>
-                  Coordinated social-first campaigns for events, increasing
-                  sign-ups by 30%.
+                  Built secure Azure lakehouse architecture (ADLS Gen2, Synapse,
+                  ADF, Spark) for cross-system integration.
                 </li>
                 <li>
-                  Planned, filmed, and edited content for social channels,
-                  boosting engagement by 35%.
+                  Delivered complex pipelines: IoT telemetry, procurement hybrid
+                  ingestion (API + SFTP), and probabilistic linkage (Splink).
                 </li>
                 <li>
-                  Managed CRM segmentation, list hygiene, and automated email
-                  flows (HubSpot / Mailchimp).
-                </li>
-                <li>
-                  Produced performance reporting using GA4 and Looker Studio;
-                  partnered with sales on lead-gen tracking.
+                  Led AI hackathon delivery using Azure Document Intelligence and
+                  Azure AI Foundry (GPT-4), reducing manual evaluation time by
+                  <strong>80%</strong>.
                 </li>
               </ul>
             </div>
 
-            <!-- TIMELINE ITEM: Mangere -->
             <div class="timeline-item">
               <span class="timeline-marker"></span>
               <h6 class="fw-semibold text-white mb-1">
-                Digital Marketing Specialist (Voluntary) — Māngere Budgeting
-                Service Trust
+                Data Scientist (Internship) — ROKE Manor Research
               </h6>
-              <p class="section-subtitle mb-2">
-                2025 – Present · Auckland, New Zealand
-              </p>
+              <p class="section-subtitle mb-2">Jun 2023 – Sep 2023 · Remote, UK</p>
               <ul class="text-muted small">
                 <li>
-                  Created digital campaigns to increase community awareness and
-                  support donation activity.
+                  Built text mining pipelines on a 4M user base using Python
+                  (NumPy, Pandas, NLTK, Scikit-learn).
                 </li>
                 <li>
-                  Designed visuals and content calendars for social platforms.
-                </li>
-                <li>
-                  Supported SEO improvements on WordPress / Squarespace to
-                  improve discoverability.
-                </li>
-                <li>
-                  Increased volunteer sign-ups through targeted content and
-                  community engagement.
+                  Trained and tuned models (SVM, XGBoost, Naïve Bayes, LSTM)
+                  achieving <strong>76.35%</strong> accuracy.
                 </li>
               </ul>
             </div>
 
-            <!-- TIMELINE ITEM: Ray White -->
             <div class="timeline-item">
               <span class="timeline-marker"></span>
               <h6 class="fw-semibold text-white mb-1">
-                Marketing Intern — Ray White Takanini & Karaka
+                Data Scientist — Infosys Limited
               </h6>
-              <p class="section-subtitle mb-2">
-                Sep 2025 – Oct 2025 · Auckland, New Zealand
-              </p>
+              <p class="section-subtitle mb-2">Dec 2018 – Aug 2022 · India</p>
               <ul class="text-muted small">
                 <li>
-                  Designed creatives, brochures, and brand-aligned marketing
-                  materials.
-                </li>
-                <li>Supported SEO optimisation for property listings.</li>
-                <li>
-                  Scheduled posts and tracked engagement analytics.
+                  Engineered ETL pipelines (Python + Oracle SQL/PLSQL) feeding AWS
+                  environments (S3, EC2).
                 </li>
                 <li>
-                  Supported agents with campaign coordination and brand
-                  consistency.
+                  Automated operational processes saving <strong>20 hours/week</strong>
+                  and <strong>$200K/year</strong>; reduced reporting from 2 hours
+                  to under 5 minutes.
+                </li>
+                <li>
+                  Led a 5-member team and supported CI/CD delivery (Git, Jenkins)
+                  in production.
                 </li>
               </ul>
             </div>
 
-            <!-- TIMELINE ITEM: Gasoline Alley -->
             <div class="timeline-item">
               <span class="timeline-marker"></span>
               <h6 class="fw-semibold text-white mb-1">
-                Customer Service & Sales Assistant — Gasoline Alley Services
+                Data Analyst — Krupa Technologies
               </h6>
-              <p class="section-subtitle mb-2">
-                Jul 2023 – Sep 2025 · Auckland, New Zealand
-              </p>
-              <ul class="text-muted small">
-                <li>Handled 150–200 daily transactions with high accuracy.</li>
-                <li>Maintained >98% inventory accuracy across 200+ SKUs.</li>
-                <li>Increased upsells by 12% via personalised suggestions.</li>
-                <li>
-                  Installed promotional displays & tracked campaign engagement.
-                </li>
-              </ul>
+              <p class="section-subtitle mb-0">May 2017 – Oct 2018 · India</p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- EDUCATION -->
       <section class="section-wrapper reveal">
         <div class="section-inner">
           <div class="section-title">
@@ -1240,26 +1127,33 @@
             <div class="timeline-item">
               <span class="timeline-marker"></span>
               <h6 class="fw-semibold text-white mb-1">
-                Master of Applied Business — Digital Marketing
+                MSc — Data and Decision Analytics
               </h6>
-              <p class="section-subtitle mb-2">
-                Unitec Institute of Technology · 2023–2024 · Auckland
-              </p>
+              <p class="section-subtitle mb-2">University of Southampton · UK</p>
             </div>
-
             <div class="timeline-item">
               <span class="timeline-marker"></span>
               <h6 class="fw-semibold text-white mb-1">
-                Bachelor of Science — Animation
+                MTech — Computer Science
+              </h6>
+              <p class="section-subtitle mb-2">
+                Rajagiri University of Engineering &amp; Technology · India
+              </p>
+            </div>
+            <div class="timeline-item">
+              <span class="timeline-marker"></span>
+              <h6 class="fw-semibold text-white mb-1">
+                BE — Computer Engineering
               </h6>
               <p class="section-subtitle mb-0">
-                Fergusson College · 2017–2020 · Pune, India
+                St. Vincent Pallotti College of Engineering &amp; Technology · India
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- CERTIFICATIONS -->
       <section class="section-wrapper reveal">
         <div class="section-inner">
           <div class="section-title">
@@ -1270,20 +1164,30 @@
           </div>
 
           <div class="mb-0">
-            <span class="cert-badge"
-              ><i class="bi bi-patch-check"></i>Google Analytics 4 (GA4)</span
-            >
-            <span class="cert-badge"
-              ><i class="bi bi-patch-check"></i>Google Ads Certification</span
-            >
-            <span class="cert-badge"
-              ><i class="bi bi-patch-check"></i>HubSpot Inbound Marketing</span
-            >
-            <span class="cert-badge"
-              ><i class="bi bi-patch-check"></i>Complete Digital Marketing Guide
-              – Udemy</span
-            >
+            <span class="cert-badge"><i class="bi bi-patch-check"></i>Microsoft PL-300 (Power BI Data Analyst)</span>
+            <span class="cert-badge"><i class="bi bi-patch-check"></i>Microsoft Azure Data Fundamentals</span>
+            <span class="cert-badge"><i class="bi bi-patch-check"></i>PG Diploma in Big Data Analytics (C-DAC)</span>
+            <span class="cert-badge"><i class="bi bi-patch-check"></i>Data Science &amp; ML Bootcamp (Python &amp; R)</span>
+            <span class="cert-badge"><i class="bi bi-patch-check"></i>Infosys Global Agile Developer</span>
+            <span class="cert-badge"><i class="bi bi-patch-check"></i>Infosys Automation Foundation Developer</span>
           </div>
+        </div>
+      </section>
+
+      <!-- PUBLICATION -->
+      <section class="section-wrapper reveal">
+        <div class="section-inner">
+          <div class="section-title">
+            <div class="section-icon-wrap">
+              <i class="bi bi-journal-text"></i>
+            </div>
+            <span>Publication</span>
+          </div>
+          <p class="section-subtitle mb-2">Selected academic work.</p>
+          <p class="mb-0">
+            <strong>Model To Analyze And Predict The Academic Performance Of Students Using Data Mining Techniques</strong>
+            — International Journal of Pure and Applied Mathematics, Volume 119 No. 12 (2018), 12829-12840.
+          </p>
         </div>
       </section>
 
@@ -1297,39 +1201,33 @@
             <span>Contact</span>
           </div>
           <p class="section-subtitle">
-            If this looks aligned with what you’re hiring for, I’d love to chat.
+            Want to chat about data platforms, pipelines, or analytics delivery?
           </p>
           <p>
-            I’m available for Ad Operations, Marketing Operations, and
-            performance reporting roles. If you’d like to discuss a role, see
-            more work, or walk through a dashboard or campaign workflow, just
-            drop me a line.
+            Email is best, or connect with me on LinkedIn.
           </p>
-          <button
-            class="btn-contact"
-            onclick="window.location.href='mailto:amalrj56@gmail.com'"
-          >
-            <i class="bi bi-envelope"></i>
-            <span>Email Amal</span>
-          </button>
+          <div class="d-flex flex-wrap gap-2">
+            <button
+              class="btn-contact"
+              onclick="window.location.href='mailto:arjathullya@gmail.com'"
+            >
+              <i class="bi bi-envelope"></i>
+              <span>Email Athullya</span>
+            </button>
+            <button
+              class="btn-contact"
+              onclick="window.open('https://www.linkedin.com/in/athullyabhuvanendran/', '_blank')"
+            >
+              <i class="bi bi-linkedin"></i>
+              <span>LinkedIn</span>
+            </button>
+          </div>
         </div>
       </section>
     </main>
 
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <script>
-      pdfjsLib.GlobalWorkerOptions.workerSrc =
-        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-    </script>
-    <script>
-      window.__SITE_VERSION__ = "20260317";
-    </script>
-    <script src="data/content-inline.js?v=20260317"></script>
-    <script src="js/content-loader.js?v=20260317"></script>
 
     <script>
       // Simple reveal-on-scroll
@@ -1349,6 +1247,7 @@
     </script>
   </body>
 </html>
+
 
 
 
